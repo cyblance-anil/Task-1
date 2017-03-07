@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Spotify Artist Search</title>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="css/mobile-angular-ui/mobile-angular-ui-hover.min.css" />
+    <link rel="stylesheet" href="css/mobile-angular-ui/mobile-angular-ui-base.min.css" />
+    <link rel="stylesheet" href="css/mobile-angular-ui/mobile-angular-ui-desktop.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/demo.css" />
+    
+    <link rel="stylesheet" href="css/ngDialog/ngDialog.min.css">
+    <link rel="stylesheet" href="css/ngDialog/ngDialog-theme-default.min.css">
+</head>
+<body ng-controller="MainController" class="has-navbar-top">
+
+    <div class="navbar navbar-app navbar-absolute-top">
+        <div class="btn-group pull-left brand-logo">
+            <img src="images/logo-white-2x.png">
+        </div>
+        <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+            Spotify Artist Search
+        </div>
+        <!--<div class="btn-group pull-right">
+            <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle" ng-click="showSearch = ! showSearch">
+                <i class="fa fa-search"></i> 
+            </div>
+        </div>-->
+    </div>
+ <div class="app-body">
+    <!--<div ng-show="loading" class="app-content-loading">
+      <i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>-->
+    <div class="app-content">   
+        <div class="scrollable" ui-shared-state="searchBar">
+            <div class="list-group inputSearch" ng-show="!showSearch">
+                <div class="list-group-item">
+                    <input type="text" class="form-control" ng-model="searchartist" ng-change="searchArtist()" placeholder="Search for an Artist">
+                    
+                </div>
+            </div>
+            <div class="search-details">
+                <div class="scrollable-content">
+                    <div class="list-group SearchArtistList">
+                        <!--<a ng-repeat="artist in artists" class="media list-group-item" ng-click="{{artist.external_urls.spotify}}" target="_blank"></a>-->
+                        <a ng-repeat="artist in artists" class="media list-group-item" rel="{{artist.external_urls.spotify}}" ng-click="open(artist.external_urls.spotify)">
+                            <div class="media-images">
+                                <img ng-src="{{artist.images[0].url}}" alt="">
+                            </div>
+                            <div class="media-details">
+                            {{artist.name}}
+                            </div>
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+  <!--<ul>
+    <li ng-repeat="artist in artists">
+      <a class="media" ng-href="{{artist.external_urls.spotify}}" target="_blank">
+        <img ng-src="{{artist.images[0].url}}" alt="">
+        <div class="media-details">
+          {{artist.name}}
+        </div>
+      </a>
+    </li>
+  </ul>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script>window.angular || document.write('<script src="js/angular/angular.min.js">\x3C/script>')</script>
+    <script src="js/ngDialog/ngDialog.min.js"></script>
+    <script src="js/mobile-angular-ui/mobile-angular-ui.min.js"></script>
+    <script src="js/mobile-angular-ui/mobile-angular-ui.gestures.min.js"></script>
+    
+    
+    
+    
+  <script src="js/angular-spotify.js"></script>
+  <script src="main.controller.js"></script>
+</body>
+</html>

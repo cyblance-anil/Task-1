@@ -1,0 +1,132 @@
+body{
+    background: #050507;
+}
+.brand-logo{
+    padding: 8px 15px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 9;
+}
+.brand-logo img{
+    width: auto;
+    height: 35px;
+}
+.navbar-absolute-top{
+    background: #050507;
+    border: none;
+}
+.list-group-item{
+    background-color: #050507;
+}
+a.list-group-item{
+    color: #fff;
+}
+.list-group-item, a.list-group-item{
+    border-bottom: 1px solid #464646;
+}
+a.list-group-item:hover, button.list-group-item:hover, a.list-group-item:focus, button.list-group-item:focus {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #000;
+    border-bottom: 1px solid #464646;
+}
+.navbar-brand-center{
+    float: none;
+    text-align: center;
+    color: #FFF;
+}
+.inputSearch .form-control{
+    background: #222;
+    border: 1px solid #525252;
+    color: #fff;
+}
+.inputSearch, .SearchArtistList{
+    margin: 0px;
+}
+.search-details{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    height: calc(100% - 55px);
+    overflow: auto;
+}
+.search-list-group{
+    float: left;
+    width: 60%;
+    border-right: 1px solid #ddd;
+    height: 100%;
+}
+.search-list-details{
+    float: right;
+    width: 40%;
+    padding: 30px;
+    height: 100%;
+}
+.media {
+    display: table;
+    width: 100%;
+}
+.media .media-images {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    background: #ccc;
+}
+.media-details {
+    padding-left: 1em;
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 90px);
+}
+.SearchArtistList .list-group-item{
+    
+}
+.SearchArtistList .fa{
+    display: table-cell;
+    width: 10px;
+    vertical-align: middle;
+}
+body .ngdialog.ngdialog-theme-default{
+    padding: 0px;
+    top: 10vh;
+}
+body .ngdialog-overlay{
+    background: rgba(255, 255, 255, 0.6);
+}
+body .ngdialog.ngdialog-theme-default .ngdialog-content{
+    padding: 0px;
+    background: #000;
+    width: 80%;    
+    height: 80vh;
+}
+.ngdialog-content iframe{
+    width: 100%;
+    border: none;
+    /* height: 500px; */
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+@media (max-width: 480px){
+    .brand-logo{
+        display: none;
+    }
+    .media .media-images {
+        width: 50px;
+        height: 50px; 
+    }
+    .media-details {
+        width: calc(100% - 60px);
+    }
+    body .ngdialog.ngdialog-theme-default{
+        top: 5vh;
+    }
+    body .ngdialog.ngdialog-theme-default .ngdialog-content{
+        width: 90%;
+        height: 90vh;
+    }
+}
